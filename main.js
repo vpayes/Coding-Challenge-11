@@ -28,8 +28,12 @@ placeOrderButton.addEventListener('click', function() {
     const selectedProduct = productSelector.options[productSelector.selectedIndex].text;
     const quantity = quantityInput.value;
     const totalPrice = totalPriceElement.textContent;
-    
+    //Input Validation 
+    if (quantity < 1){
+        orderSummary.textContent = 'Not a valid quantity.';
+    }else{    
     orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct}. Total price: $${totalPrice}`;
+    }
 });
 
 
