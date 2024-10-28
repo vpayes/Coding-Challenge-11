@@ -11,6 +11,13 @@ function updateTotalPrice() {
     const totalPrice = productPrice * quantity;
     
     totalPriceElement.textContent = totalPrice.toFixed(2);
+    // Input Validation 
+if (quantity < 1){
+    totalPriceElement.textContent = '0.00';
+    return;
+}
+const totalPrice = productPrice * quantity;
+totalPriceElement.textContent = totalPrice.toFixed(2);
 }
 
 productSelector.addEventListener('change', updateTotalPrice);
@@ -24,3 +31,6 @@ placeOrderButton.addEventListener('click', function() {
     
     orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct}. Total price: $${totalPrice}`;
 });
+
+
+
